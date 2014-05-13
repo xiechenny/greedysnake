@@ -22,23 +22,26 @@ class STDPrinter : public Printer
 
 	public:
 	void printMap( const std::vector<std::vector<char> > &map ){
+		if(map.size()>0){
 		std::cout<<tips<<std::endl;
 		//top edge
-	    for(size_t j=0;j<map.size();j++)
+	    for(size_t j=0;j<map.size()+2;j++)
 	          std::cout<<'-';
 	    std::cout<<std::endl;
 
 	    //game area
 	    for(size_t i=0;i<map.size();i++){
+			std::cout<<"|";
 	        for(size_t j=0;j<map[i].size();j++)
 	             std::cout<<map[i][j];
-	        std::cout<<std::endl;
+	        std::cout<<'|'<<std::endl;
 									    }
 
 	    //bottom edge
-	    for(size_t j=0;j<map.size();j++)
+	    for(size_t j=0;j<map.size()+2;j++)
 	        std::cout<<'-';
 	    std::cout<<std::endl;
+		}
 	};
 	
 	void printLine(const std::string &content)
